@@ -1,0 +1,79 @@
+.vcard-qtcontent {
+	border-bottom: none;
+}
+
+.vcard-qtcontent {
+	position: absolute;
+	min-height: 200px;
+	border-top: 1px solid #f4f4f4;
+	border-bottom: 1px solid #f4f4f4;
+	padding: 2em 0;
+	top: 0;
+	z-index: 0;
+	opacity: 0;
+	width: 100%;
+	-webkit-backface-visibility: hidden;
+}
+
+.vcard-qtcontent {
+	position: relative; 
+	z-index: 100;
+	pointer-events: auto;
+	opacity: 1;
+}
+
+.vcard-qtcontent img {
+	float: right;
+	margin-left: 3em;
+	margin-right: 5em;
+
+    width: 120px;
+	height: 120px;
+	border-radius: 150px;
+	-webkit-border-radius: 150px;
+	-moz-border-radius: 150px;
+}
+
+.vcard-qtcontent img:hover{
+ -webkit-box-shadow: inset 0 0 2px rgba(0, 0, 0, 0.3), inset 0px 1px 2px rgba(0, 0, 0, 0.3), 0 0 8px 1px rgba(208, 205, 247, 0.8);
+  -moz-box-shadow: inset 0 0 2px rgba(0, 0, 0, 0.3), inset 0px 1px 2px rgba(0, 0, 0, 0.3), 0 0 8px 1px rgba(208, 205, 247, 0.8);
+  box-shadow: inset 0 0 2px rgba(0, 0, 0, 0.3), inset 0px 1px 2px rgba(0, 0, 0, 0.3), 0 0 8px 1px rgba(208, 205, 247, 0.8);
+}
+
+.vcard-qtcontent:after {
+	clear: both;
+}
+
+.vcard-qtcontent:after {
+	content: " ";
+	display: table;
+}
+
+.vcard-qtcontent blockquote {
+	margin: 1em;
+	padding: 0;
+}
+
+.vcard-qtcontent blockquote p {
+	font-size: 1.5em;
+	color: #888;
+	font-weight: 300;
+    line-height: normal;
+	margin: 0.4em 0 1em;
+}
+
+.vcardblock footer:before {
+	/*content: 'â€• ';*/
+	content: &#95; /*traco, html5 entities*/
+}
+
+.cbp-qtcontent blockquote footer {
+	font-size: 1.2em;
+}
+
+@media (max-width: 500px) {
+    .vcard-qtcontent blockquote p {
+        font-size: 1.5em;
+        margin: 0.4em;
+    }
+}

@@ -1,0 +1,17 @@
+    /* imagem responsiva */
+.imglocal img {
+max-width: 100%;
+height: auto;
+}
+@media screen {
+.imglocal img {
+width: auto; /* for ie 8 */
+}
+}
+.imglocal {
+margin: 0;
+}
+/* html5 elements */
+.imglocal {
+display: block;
+}

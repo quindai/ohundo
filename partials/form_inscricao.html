@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+<head>
+	<meta charset="UTF-8">
+	<title>Formulário de Inscrição</title>
+	<link rel="stylesheet" type="text/css" href="/css/_modaldialog.css">
+	<link rel="stylesheet" type="text/css" href="/css/_bootstrap.min.css">
+	
+	<script src='/js/angular.min.js'></script>
+    <script src='/js/firebase.js'></script>
+    <script src='/js/angularfire.min.js'></script>
+</head>
+<body ng-controller="MyController">
+<!--<a href="#openModal">Open Modal</a>-->
+<div id="openModal" class="modalDialog">
+    <!-- <div>	
+    	<a href="#close" title="Close" class="close">X</a>
+
+        <h2>Modal Box</h2>
+
+        <p>This is a sample modal box that can be created using the powers of CSS3.</p>
+        <p>You could do a lot of things here like have a pop-up ad that shows when your website loads, or create a login/register form for users.</p>
+    </div> -->
+	<div>
+<!--    <a href="#close"><button type="button" class="close" aria-label="Close"><span aria-hidden="true">&times;</span></button></a>-->
+    <a href="http://ohundo.tempsite.ws/#/inscricao"><button type="button" class="close" aria-label="Close"><span aria-hidden="true">&times;</span></button></a>
+	<h2>Formulário de Inscrição</h2>
+		<form action="finaliza_inscr.html">
+				<div class="form-group">   <!-- form-group para espaçamento correto-->
+	                <label for="txtCodUsuario">Código de Usuário</label>
+	                <div class="input-group">
+	                	<span class="input-group-btn">
+        					<a href="#ajudaCodUsuario"><button class="btn btn-default" type="button">?</button></a>
+      					</span>
+	                    <input ng-model='cod' type="text" class="form-control" placeholder="Insira o seu código aqui...">
+	                </div>
+                </div>
+
+                <div class="form-group">
+					<label for="txtNome">Nome</label>
+					<input ng-model='nome' type="text" class="form-control" id="txtNome" placeholder="Insira o seu nome, por favor..." required>
+				</div>
+
+<div class="form-group">
+					<label for="txtId">Documento de Identificação</label>
+					<div class="input-group">
+						<div class="input-group-addon">
+							<select ng-model='tdoc' style="width:auto" required>
+								<option>Bilhete de Identidade</option>
+								<option>Carta de Condução</option>
+								<option>Passaporte</option>
+							</select>
+						</div>
+						<input ng-model='doc' type="text" class="form-control" id="txtId" placeholder="Número do documento..." required>
+					</div>
+				</div>				
+
+				<div class="form-group">
+					<label for="cboGenero">Gênero</label>
+					<select ng-model='genero' class="form-control" style="width:auto" required>
+						<option>Masculino</option>
+						<option>Feminino</option>
+					</select>
+				</div>
+
+				<div class="form-group">
+					<label for="txtTel">Número de Telefone</label>
+					<div class="input-group">
+						<div class="input-group-addon">+244</div>
+						<input ng-model='numTel' type="tel" class="form-control" id="txtId" placeholder="Número de telefone..." required>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<label for="txtEmail">Email</label>
+					<div class="input-group">
+						<div class="input-group-addon">@</div>
+						<input ng-model='email' type="email" class="form-control" id="txtEmail" placeholder="exemplo: seuemail@ohundo.net" required>
+					</div>
+				</div>
+
+                <div class="form-group">
+                    <label for="groupNivel">Como classificarias o teu nível de conhecimento em:</label></br>
+                    <label for="cboHtml">HTML5</label>
+                    <!-- <select class="form-control">
+                        <option>0</option><option>1</option>
+                        <option>2</option><option>3</option>
+                        <option>4</option><option>5</option>
+                    </select> -->
+                    <br/>
+                    <label class="radio-inline">
+                        <input ng-model='classificaHtml' type="radio" name="rdio" id="rdio1" value="opt1">1
+                    </label>
+                    <label class="radio-inline">
+                        <input ng-model='classificaHtml' type="radio" name="rdio" id="rdio2" value="opt2">2
+                    </label>
+                    <label class="radio-inline">
+                        <input ng-model='classificaHtml' type="radio" name="rdio" id="rdio3" value="opt3">3
+                    </label>
+                    <label class="radio-inline">
+                        <input ng-model='classificaHtml' type="radio" name="rdio" id="rdio4" value="opt4">4
+                    </label>
+                    <label class="radio-inline">
+                        <input ng-model='classificaHtml' type="radio" name="rdio" id="rdio5" value="opt5">5
+                    </label>
+				</div>
+				<input class="btn btn-lg btn-block btn-primary" ng-click="addMessage($event)" type="submit" class="form-control">
+		</form>
+<!--
+		<ul id='example-messages' class='example-chat-messages'>
+        <li ng-repeat='msg in messages'>
+          <strong class='example-chat-username'>{{msg.nome}}</strong>
+          {{msg.email}}
+        </li>
+      </ul>
+-->
+	</div>
+</div>
+	<!-- Janela de Ajuda -->
+	<div id="ajudaCodUsuario" class="modalDialog">
+		<div>
+			<a href="#openModal"><button type="button" class="close" aria-label="Close"><span aria-hidden="true">&times;</span></button></a>
+	
+			<h2>Ajuda - Código de Usuário</h2>
+				<p>O código de usuário é um conjunto de caracteres usados para identificar os usuários inscritos no nosso sistema. Caso ainda não tenha feito a inscrição, por favor ignore esse esse campo, no final do seu cadastro forneceremos o seu código.</p>
+				<p>Se já tiver cadastro, por favor insira o seu código para que possamos identificá-lo(a), evitando dessa forma preencher os campos abaixo.</p>
+
+				<p>Passos:</p>
+				<ol>
+					<li>Insira o seu código de usuário.</li>
+					<li>Pressione Enter.</li>
+				</ol>
+				<p>Pronto! Confirme se os seus dados estão corretos e prossiga para a finalização da inscrição.</p>
+				<p>FAQ</p>
+				<dl>
+					<dt>É obrigatório fazer a inscrição para fazer o curso?</dt>
+					<dd>Não, o cadastro pode ser feito também por quem estiver interessado no curso mas ainda não deseja efetuar o pagamento.</dd>
+				</dl>
+		</div>
+	</div>
+
+	<script>
+      var myApp = angular.module("myApp", ["firebase"]);
+
+      myApp.controller('MyController', ['$scope', '$firebase',
+        function($scope, $firebase) {
+          //CREATE A FIREBASE REFERENCE
+          var ref = new Firebase("https://ohundo-randy.firebaseio.com");
+
+          // GET MESSAGES AS AN ARRAY
+          $scope.messages = $firebase(ref).$asArray();
+
+          //ADD MESSAGE METHOD
+          $scope.addMessage = function(e) {
+
+            //LISTEN FOR RETURN KEY
+//            if (e.keyCode === 13 && $scope.msg) {
+//            if ($scope.nome) {
+              //ALLOW CUSTOM OR ANONYMOUS USER NAMES
+//              var name = $scope.name || 'anonymous';
+              var codigo = $scope.cod || 'sem_codigo';
+              //ADD TO FIREBASE
+              $scope.messages.$add({
+                cod: codigo,
+                nome: $scope.nome,
+                tipoDoc: $scope.tdoc,
+                doc: $scope.doc,
+                genero: $scope.genero,
+                numTel: $scope.numTel,
+                email: $scope.email,
+                classificaHtml: $scope.classificaHtml
+              });
+
+              //RESET MESSAGE
+              $scope.msg = "";
+//            }
+          }
+        }
+      ]);
+    </script>
+</body>
+</html>

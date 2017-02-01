@@ -1,0 +1,117 @@
+/*Usando partial import, como Sass*/
+@import "_bootstrap.min.css";
+@import "_vcard_estilo.css";
+@import "_slidein_menuestilo.css";
+@import "_imglocal.css";
+@import "_modaldialog.css";
+/*Usar Less*/
+
+body{
+    margin: 0 0 5em;
+    padding: 0;
+    font-size: 14px;
+    line-height: 1.3em;
+}
+
+h1{
+    color: rgb(255, 255, 255);
+    font-size: 10em;
+}
+
+@media (max-width: 500px) {
+    h1 {
+        font-size:5em;
+        max-width: 100%;
+    }
+    
+    blockquote p{
+        font-size: 0.8em;
+    }
+    
+    .nav-pills{ /*esconde o menu*/
+        display: none;
+    }
+    
+    footer a{
+        visibility: visible !important;
+        display: !none;
+    }
+}
+
+@media (max-width: 800px){
+    footer small{
+        display: none;
+    }
+}
+
+summary{
+    color: rgb(255, 255, 255);
+    font-size: 1em;
+}
+
+p{
+    text-align: justify;
+    text-justify: inter-word;
+}
+/* inicial */
+.banner{
+    display: block;
+    background-color: #79bcff;
+}
+
+.banner p{
+    text-align: right;
+}
+
+.banner a:link{
+    text-decoration: none;
+}
+
+.banner a:active{
+    color: rgb(255, 255, 255);
+    border-color: rgb(255, 255, 255);
+}
+
+ul{
+    list-style-type: none;
+}
+/*
+.banner.ng-enter {
+  transition: height 1s;
+  height: 0px;
+  overflow: hidden;
+}
+
+.banner.ng-enter-active {
+  height: 100%;
+}
+*/
+
+.btn-lang{
+    color: #55acee;
+    border: 2px #55acee solid;
+    border-radius: 5px;
+    text-decoration: none;
+    padding-top: 10px;
+    transition: .3s;
+    -webkit-transition: .3s;
+    -moz-transition: .3s;
+    -o-transition: .3s;
+    text-align: center;
+    top: 0;
+    right: 0;
+}
+    
+.main-content{
+    padding-left: 0.5em;
+    padding-right: 0.5em;
+    max-width: 1200px;
+}
+
+footer{
+    float: bottom;
+}
+
+footer small{
+    padding-right: 2em;
+}
